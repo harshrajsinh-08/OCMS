@@ -20,7 +20,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: MediumSeaGreen;
-  /* Change the background color here */
   padding: 10px 20px;
 }
 
@@ -47,7 +46,6 @@
   background-color: black;
 }
 
-/* Remove flex properties */
 .container {
   text-align: center;
   margin: 0 auto;
@@ -55,7 +53,6 @@
   padding: 20px;
 }
 
-/* Style for form elements */
 label {
   display: block;
   margin-bottom: 5px;
@@ -70,7 +67,6 @@ button {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  /* Ensure padding and border are included in element's total width and height */
 }
 
 button {
@@ -83,7 +79,6 @@ button:hover {
   background-color: DarkSeaGreen;
 }
 
-/* Navbar styles */
 .navbar {
   background-color: MediumSeaGreen;
   overflow: hidden;
@@ -102,7 +97,6 @@ button:hover {
   background-color: DarkSeaGreen;
 }
 
-/* Content Container */
 .container {
   margin-top: 20px;
   text-align: center;
@@ -126,8 +120,6 @@ h2 {
   box-shadow: 0 0 10px 0px black;
 }
 
-
-/* Additional CSS for the grid layout */
 .course h3 {
   height: 20%;
 }
@@ -143,11 +135,8 @@ h2 {
 .course-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 columns */
   gap: 20px;
-  justify-content: center
-  /* Gap between grid items */
-  ;
+  justify-content: center;
 }
 
 
@@ -155,14 +144,11 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 20px;
-  /* Increased padding */
   background-color: #f9f9f9;
-  /* Maintain color scheme */
   width: 250px;
   height: 250px;
 }
 
-/* Additional CSS for user options */
 .container {
   text-align: center;
   margin-top: 50px;
@@ -188,5 +174,5 @@ h2 {
 }
 
 .user-options-list li a:hover {
-  background-color: #228B22; /* Darker shade of mediumseagreen on hover */
+  background-color: #228B22; 
 }
