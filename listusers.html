@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of Registered Users</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <header class="header" style="justify-content: center">
+      <div class="logo">
+        <img src="logo.svg" alt="Logo" height="60px" width="70px" />
+      </div>
+      <div class="title">
+        <h1>Online Course Management System</h1>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar-container" style="background-color: cornflowerblue">
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" style="color: white"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="userform.html"
+              style="color: white"
+              >User Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="adminoptions.html"
+              style="color: white"
+              >Admin Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Container for list of registered users -->
+    <div class="container">
+      <h2>List of Registered Users</h2>
+      <div class="course-container">
+        <div class="course" id="course1">
+          <h3>BCSE102P JAVA</h3>
+          <p>Registered Users:</p>
+          <ul>
+            <li>Harshrajsinh Zala</li>
+            <li>Ami Agravat</li>
+            <li>Colin Wong</li>
+            <li>Ellen Hanson</li>
+            <li>Willow Waters</li>
+          </ul>
+          <p>Total Students: <span id="totalStudents1"></span></p>
+        </div>
+        <div class="course" id="course2">
+          <h3>BCSE202P TOC</h3>
+          <p>Registered Users:</p>
+          <ul>
+            <li>Yash Bothra</li>
+            <li>Shivam Sunda</li>
+            <li>Dawid Browning</li>
+            <li>Aleeza Wall</li>
+            <li>Karen Cook</li>
+            <p>Total Students: <span id="totalStudents2"></span></p>
+          </ul>
+        </div>
+        <div class="course" id="course3">
+          <h3>BCSE205P OOPS</h3>
+          <p>Registered Users:</p>
+          <ul>
+            <li>Punya Jain</li>
+            <li>Mayank Singh Patwal</li>
+            <li>Lulu Terrell</li>
+            <li>Carter Hansen</li>
+            <li>Abbas Stuart</li>
+          </ul>
+          <p>Total Students: <span id="totalStudents3"></span></p>
+        </div>
+        <div class="course" id="course4">
+          <h3>BCSE301P Software Engineering</h3>
+          <p>Registered Users:</p>
+          <ul>
+            <li>John Doe</li>
+            <li>Jane Smith</li>
+            <li>Michael Johnson</li>
+          </ul>
+          <p>Total Students: <span id="totalStudents4"></span></p>
+        </div>
+        <div class="course" id="course5">
+          <h3>BCSE401P Artificial Intelligence</h3>
+          <p>Registered Users:</p>
+          <ul>
+            <li>Emily Brown</li>
+            <li>David Wilson</li>
+            <li>Sophia Taylor</li>
+            <li>James Martinez</li>
+          </ul>
+          <p>Total Students: <span id="totalStudents5"></span></p>
+        </div>
+      </div>
+      <br />
+      <button onclick="goToAdminOptions()">Go to Admin Dashboard</button>
+    </div>
+
+    <script>
+      // Function to navigate to admin options
+      function goToAdminOptions() {
+        window.location.href = "adminoptions.html";
+      }
+
+      // total bacche ginne ke liye function
+      function countTotalStudents() {
+        const courseContainers = document.querySelectorAll(".course");
+        courseContainers.forEach((container) => {
+          const courseId = container.id;
+          const registeredUsersList = container.querySelector("ul");
+          const totalStudentsSpan = container.querySelector("span");
+          const totalStudents = registeredUsersList.children.length;
+          totalStudentsSpan.textContent = totalStudents;
+        });
+      }
+      //using this function
+      countTotalStudents();
+    </script>
+  </body>
+</html>

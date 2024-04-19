@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Course</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" style="justify-content: center">
+      <div class="logo">
+        <img src="logo.svg" alt="Logo" height="60px" width="70px" />
+      </div>
+      <div class="title">
+        <h1>Online Course Management System</h1>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar-container" style="background-color: mediumseagreen">
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" style="color: white"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="userform.html"
+              style="color: white"
+              >User Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="adminoptions.html"
+              style="color: white"
+              >Admin Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Heading Container -->
+    <div class="container">
+      <div id="greeting_div">
+        <h2 id="greeting">Delete a Posted Course</h2>
+      </div>
+      <!-- Course Container -->
+      <div class="course-container">
+        <div class="course" data-course="BCSE102P JAVA">
+          <h3>BCSE102P JAVA</h3>
+          <p class="para">Introduction to Java programming language</p>
+          <p><strong>Schedule:</strong> Mon-Fri, 9:00 AM - 12:00 PM</p>
+          <button onclick="deleteCourse(this)">Delete Course</button>
+        </div>
+        <div class="course" data-course="BCSE202P TOC">
+          <h3>BCSE202P TOC</h3>
+          <p>Theory of Computation</p>
+          <p><strong>Schedule:</strong> Tue-Thu, 2:00 PM - 3:00 PM</p>
+          <button onclick="deleteCourse(this)">Delete Course</button>
+        </div>
+        <div class="course" data-course="BCSE205P OOPS">
+          <h3>BCSE205P OOPS</h3>
+          <p>Object-Oriented Programming using Java</p>
+          <p><strong>Schedule:</strong> Sat-Sun, 10:00 AM - 1:00 PM</p>
+          <button onclick="deleteCourse(this)">Delete Course</button>
+        </div>
+        <div class="course" data-course="BCSE404P DAA">
+          <h3>BCSE404P DAA</h3>
+          <p>Design and Analysis of Algorithms</p>
+          <p><strong>Schedule:</strong> Mon-Wed, 3:00 PM - 5:00 PM</p>
+          <button onclick="deleteCourse(this)">Delete Course</button>
+        </div>
+        <div class="course" data-course="BCSE505P MATHS">
+          <h3>BCSE505P MATHS</h3>
+          <p>Advanced Mathematics</p>
+          <p><strong>Schedule:</strong> Tue-Fri, 11:00 AM - 2:00 PM</p>
+          <button onclick="deleteCourse(this)">Delete Course</button>
+        </div>
+        <div class="course" data-course="BCSE405P DBMS">
+          <h3>BCSE405P DBMS</h3>
+          <p>Data Base Management Systems</p>
+          <p><strong>Schedule:</strong> Wed-Fri, 2:00 PM - 3:00 PM</p>
+          <!-- course delete ka button -->
+          <button onclick="deleteCourse(this)">Delete Course</button>
+        </div>
+      </div>
+      <!-- Navigation back button -->
+      <button onclick="goToAdminDashboard()">Go to Admin Dashboard</button>
+    </div>
+
+    <script>
+      // Function to delete course tile
+      function deleteCourse(button) {
+        const courseTile = button.parentNode; //parent tile ke liye
+        const courseName = courseTile.dataset.course;
+        if (
+          confirm(`Are you sure you want to delete the course "${courseName}"?`)
+        ) {
+          courseTile.remove(); //remove tile
+        }
+      }
+
+      function goToAdminDashboard() {
+        window.location.href = "adminoptions.html";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+.header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset -1px -2px 20px 0px black;
+
+}
+
+.logo img {
+  margin-right: 10px;
+}
+
+.title h1 {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: MediumSeaGreen;
+  /* Change the background color here */
+  padding: 10px 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: black;
+}
+
+/* Remove flex properties */
+.container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Style for form elements */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Ensure padding and border are included in element's total width and height */
+}
+
+button {
+  background-color: MediumSeaGreen;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: DarkSeaGreen;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: MediumSeaGreen;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: DarkSeaGreen;
+}
+
+/* Content Container */
+.container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.container button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.container button:hover {
+  color: black;
+  box-shadow: 0 0 10px 0px black;
+}
+
+
+/* Additional CSS for the grid layout */
+.course h3 {
+  height: 20%;
+}
+
+.course p {
+  height: auto
+}
+
+.course button {
+  height: 20%;
+}
+
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns */
+  gap: 20px;
+  justify-content: center
+  /* Gap between grid items */
+  ;
+}
+
+
+.course {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  /* Increased padding */
+  background-color: #f9f9f9;
+  /* Maintain color scheme */
+  width: 250px;
+  height: 250px;
+}
+
+/* Additional CSS for user options */
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.user-options-list {
+  padding: 0;
+}
+
+.user-options-list li {
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.user-options-list li a {
+  text-decoration: none;
+  color: #FFF;
+  background-color: mediumseagreen;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.user-options-list li a:hover {
+  background-color: #228B22; /* Darker shade of mediumseagreen on hover */
+}

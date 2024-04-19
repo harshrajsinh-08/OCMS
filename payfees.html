@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fees Payment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" style="justify-content: center">
+      <div class="logo">
+        <img src="logo.svg" alt="Logo" height="60px" width="70px" />
+      </div>
+      <div class="title">
+        <h1>Online Course Management System</h1>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="useroptions.html"
+              >User Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adminform.html"
+              >Admin Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+      <h2>Pay Fees</h2>
+      <div class="payment-form">
+        <form id="paymentForm">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required />
+
+          <label for="cardnumber">Card Number:</label>
+          <input type="text" id="cardnumber" name="cardnumber" required />
+
+          <label for="expiry">Expiry Date:</label>
+          <input type="date" id="expiry" name="expiry" required /><br /><br />
+
+          <label for="cvv">CVV:</label>
+          <input type="number" id="cvv" name="cvv" required />
+
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" required />
+
+          <button type="submit">Pay Now</button>
+        </form>
+      </div>
+      <button class="button" onclick="goToUserOptions()">
+        Go Back to User Options
+      </button>
+    </div>
+
+    <script>
+      // Function to navigate back to user options
+      function goToUserOptions() {
+        window.location.href = "useroptions.html";
+      }
+
+      // Payment form submission
+      document
+        .getElementById("paymentForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Get input values
+          let cardNumber = document.getElementById("cardnumber").value;
+          let amount = document.getElementById("amount").value;
+          let expiryDate = document.getElementById("expiry").value;
+          let currentDate = new Date().toISOString().split("T")[0];
+
+          if (expiryDate < currentDate) {
+            alert("Invalid expiry date. Please select a date not earlier than today.");
+            return;
+          }
+
+          // Validate card number and amount
+          var cardNumberRegex = /^\d{1,12}$/;
+          var cvvRegex = /^\d{3}$/;
+          var amountRegex = /^\d+$/;
+          if (!cardNumberRegex.test(cardNumber)) {
+            alert(
+              "Invalid card number. Please enter a maximum of 12 digits with no letters."
+            );
+            return;
+          }
+          if (!cvvRegex.test(cvv)) {
+            alert("Invalid CVV. Please enter a 3-digit number.");
+            return;
+          }
+          if (!amountRegex.test(amount)) {
+            alert("Invalid amount. Please enter only digits.");
+            return;
+          }
+
+          // Payment successful
+          alert(`Payment of INR ${amount} Successful`);
+        });
+    </script>
+  </body>
+</html>

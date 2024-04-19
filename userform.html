@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" style="justify-content: center">
+      <div class="logo">
+        <img src="logo.svg" alt="Logo" height="60px" width="70px" />
+      </div>
+      <div class="title">
+        <h1>Online Course Management System</h1>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="userform.html">User Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adminform.html"
+              >Admin Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- User Form -->
+    <div class="container">
+      <h2>User Form</h2>
+      <h3>Login</h3>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script>
+      // users ke usernames and passwords
+      const users = [
+        { username: "user1", password: "pass1" },
+        { username: "user2", password: "pass2" },
+        { username: "user3", password: "pass3" },
+      ];
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); //taaki form submission naa ho
+
+          //input fields se entered username and password
+          const inputUsername = document
+            .getElementById("username")
+            .value.trim();
+          const inputPassword = document
+            .getElementById("password")
+            .value.trim();
+
+          // users array mein se user dhundhna
+          const user = users.find(
+            (user) =>
+              user.username === inputUsername &&
+              user.password === inputPassword
+          );
+
+          if (user) {
+            // useroptions pe jaana agar credentials sahi hai
+            window.location.href = "useroptions.html";
+          } else {
+            // agar credentials galat hai toh alert
+            alert("Incorrect username or password. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

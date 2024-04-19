@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Course Details and Schedule</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" style="justify-content: center">
+      <div class="logo">
+        <img src="logo.svg" alt="Logo" height="60px" width="70px" />
+      </div>
+      <div class="title">
+        <h1>Online Course Management System</h1>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="userform.html">User Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adminoptions.html"
+              >Admin Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Container form -->
+    <div class="container">
+      <h2>Post Course Details and Schedule</h2>
+      <form id="postCourseForm">
+        <label for="courseCode">Course Code:</label>
+        <input type="text" id="courseCode" name="courseCode" required />
+
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" required />
+
+        <label for="schedule">Schedule:</label>
+        <input
+          type="text"
+          id="schedule"
+          name="schedule"
+          placeholder="e.g., Mon-Fri, 9:00 AM - 12:00 PM"
+          required
+        />
+
+        <button type="submit">Post Course</button>
+      </form>
+
+      <!-- Navigation back button -->
+      <button onclick="goToAdminOptions()">Go Back to Admin Options</button>
+    </div>
+
+    <script>
+      // Function to navigate back to adminoptions.html
+      function goToAdminOptions() {
+        window.location.href = "adminoptions.html";
+      }
+
+      document
+        .getElementById("postCourseForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Get form input values
+          const courseCode = document.getElementById("courseCode").value.trim();
+          const courseName = document.getElementById("courseName").value.trim();
+          const schedule = document.getElementById("schedule").value.trim();
+
+          // Validate schedule format
+          const schedulePattern =
+            /^[A-Za-z]{3}-[A-Za-z]{3}, \d{1,2}:\d{2} (AM|PM) - \d{1,2}:\d{2} (AM|PM)$/;
+          if (!schedulePattern.test(schedule)) {
+            alert(
+              "Please enter the schedule in the format: Day-Day, Start Time - End Time (e.g., Mon-Fri, 11:00 AM - 12:00 PM)"
+            );
+            return; // Exit function if validation fails
+          }
+
+          // Validate course code format
+          const courseCodePattern = /^[A-Za-z]{4}\d{3}[A-Za-z]$/;
+          if (!courseCodePattern.test(courseCode)) {
+            alert(
+              "Please enter a valid course code. (e.g., BCSE204E)"
+            );
+            return; // Exit function if validation fails
+          }
+
+          // Display confirmation message
+          const details = `Course Code: ${courseCode}\nCourse Name: ${courseName}\nSchedule: ${schedule}`;
+          alert(`Course details posted successfully.\n\n${details}`);
+
+          // Reset form input fields
+          document.getElementById("postCourseForm").reset();
+        });
+    </script>
+  </body>
+</html>
