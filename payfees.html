@@ -89,7 +89,7 @@
 
           // Validate card number and amount
           let cardNumberRegex = /^\d{1,12}$/;
-          let cvvRegex = /^\d{3}$/;
+          let cvvRegex = /\d{3}/;
           let amountRegex = /^\d+$/;
           if (!cardNumberRegex.test(cardNumber)) {
             alert(
