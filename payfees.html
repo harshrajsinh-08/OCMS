@@ -25,14 +25,10 @@
             <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="useroptions.html"
-              >User Dashboard</a
-            >
+            <a class="nav-link" href="useroptions.html">User Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="adminform.html"
-              >Admin Dashboard</a
-            >
+            <a class="nav-link" href="adminform.html">Admin Dashboard</a>
           </li>
         </ul>
       </nav>
@@ -85,21 +81,23 @@
           let currentDate = new Date().toISOString().split("T")[0];
 
           if (expiryDate < currentDate) {
-            alert("Invalid expiry date. Please select a date not earlier than today.");
+            alert(
+              "Invalid expiry date. Please select a date not earlier than today."
+            );
             return;
           }
 
           // Validate card number and amount
-          var cardNumberRegex = /^\d{1,12}$/;
-          var cvvRegex = /^\d{3}$/;
-          var amountRegex = /^\d+$/;
+          let cardNumberRegex = /^\d{1,12}$/;
+          let cvvRegex = /^\d{3}$/;
+          let amountRegex = /^\d+$/;
           if (!cardNumberRegex.test(cardNumber)) {
             alert(
               "Invalid card number. Please enter a maximum of 12 digits with no letters."
             );
             return;
           }
-          if (!cvvRegex.test(cvv)) {
+          if (!cvvRegex.test(document.getElementById("cvv").value)) {
             alert("Invalid CVV. Please enter a 3-digit number.");
             return;
           }
